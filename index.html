@@ -14,10 +14,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <style>
+      /* Base font for the entire document */
       * {
         font-family: "Poppins", sans-serif;
       }
 
+      /* Hero section background styling with linear gradient overlay and fixed attachment */
       .hero-bg {
         background: linear-gradient(
             135deg,
@@ -27,73 +29,103 @@
           url("https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80");
         background-size: cover;
         background-position: center;
-        background-attachment: fixed;
+        background-attachment: fixed; /* Makes the background image fixed while scrolling */
       }
 
+      /* Navigation bar blur effect and background */
       .nav-blur {
-        backdrop-filter: blur(20px);
-        background: rgba(255, 255, 255, 0.95);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(
+          20px
+        ); /* Applies a blur effect behind the navbar */
+        background: rgba(
+          255,
+          255,
+          255,
+          0.95
+        ); /* Semi-transparent white background */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle bottom border */
       }
 
+      /* Floating animation for elements */
       .floating-animation {
-        animation: float 6s ease-in-out infinite;
+        animation: float 6s ease-in-out infinite; /* Applies the float keyframe animation */
       }
 
+      /* Keyframes for the floating animation */
       @keyframes float {
         0%,
         100% {
-          transform: translateY(0px);
+          transform: translateY(0px); /* Start and end at original position */
         }
         50% {
-          transform: translateY(-20px);
+          transform: translateY(
+            -20px
+          ); /* Moves up by 20px at 50% of the animation */
         }
       }
 
+      /* Fade-in-up animation for elements */
       .fade-in-up {
-        animation: fadeInUp 1s ease-out;
+        animation: fadeInUp 1s ease-out; /* Applies the fadeInUp keyframe animation */
       }
 
+      /* Keyframes for the fade-in-up animation */
       @keyframes fadeInUp {
         from {
-          opacity: 0;
-          transform: translateY(30px);
+          opacity: 0; /* Starts invisible */
+          transform: translateY(
+            30px
+          ); /* Starts 30px below its final position */
         }
         to {
-          opacity: 1;
-          transform: translateY(0);
+          opacity: 1; /* Ends fully visible */
+          transform: translateY(0); /* Ends at its original Y position */
         }
       }
 
+      /* Gradient text styling */
       .gradient-text {
-        background: linear-gradient(100deg, #cd4f87, #10b981);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        background: linear-gradient(
+          100deg,
+          #cd4f87,
+          #10b981
+        ); /* Pink to emerald gradient */
+        -webkit-background-clip: text; /* Clips the background to the text shape for WebKit browsers */
+        -webkit-text-fill-color: transparent; /* Makes the text transparent so the background gradient shows through */
+        background-clip: text; /* Standard property for clipping background to text */
       }
 
+      /* Glass effect styling */
       .glass-effect {
-        backdrop-filter: blur(15px);
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(15px); /* Blurs the content behind the element */
+        background: rgba(
+          255,
+          255,
+          255,
+          0.1
+        ); /* Semi-transparent white background */
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
       }
 
+      /* Pulse animation for buttons */
       .pulse-button {
-        animation: pulse 2s infinite;
+        animation: pulse 2s infinite; /* Applies the pulse keyframe animation */
       }
 
+      /* Keyframes for the pulse animation */
       @keyframes pulse {
         0% {
-          transform: scale(1);
+          transform: scale(1); /* Start at normal size */
         }
         50% {
-          transform: scale(1.05);
+          transform: scale(1.05); /* Slightly enlarges at 50% */
         }
         100% {
-          transform: scale(1);
+          transform: scale(1); /* Returns to normal size */
         }
       }
 
+      /* Typewriter effect for text (not currently used in HTML, but defined) */
       .typewriter {
         overflow: hidden;
         border-right: 0.15em solid #10b981;
@@ -104,6 +136,7 @@
           blink-caret 0.75s step-end infinite;
       }
 
+      /* Keyframes for the typing animation */
       @keyframes typing {
         from {
           width: 0;
@@ -113,6 +146,7 @@
         }
       }
 
+      /* Keyframes for the blinking caret in typewriter effect */
       @keyframes blink-caret {
         from,
         to {
@@ -123,49 +157,59 @@
         }
       }
 
+      /* Styling for individual flower particles */
       .flower-particle {
-        position: absolute;
+        position: absolute; /* Absolute positioning for animation */
         width: 8px;
         height: 8px;
-        background: rgba(219, 39, 119, 0.2);
-        border-radius: 50%;
-        animation: fall 12s linear infinite;
+        background: rgba(219, 39, 119, 0.2); /* Semi-transparent pink */
+        border-radius: 50%; /* Makes it a circle */
+        animation: fall 12s linear infinite; /* Applies the fall keyframe animation */
       }
 
+      /* Keyframes for the falling flower particles */
       @keyframes fall {
         0% {
-          transform: translateY(-100vh) rotate(0deg);
-          opacity: 0;
+          transform: translateY(-100vh) rotate(0deg); /* Starts above viewport, no rotation */
+          opacity: 0; /* Starts invisible */
         }
         10% {
-          opacity: 1;
+          opacity: 1; /* Becomes visible */
         }
         90% {
-          opacity: 1;
+          opacity: 1; /* Stays visible */
         }
         100% {
-          transform: translateY(100vh) rotate(360deg);
-          opacity: 0;
+          transform: translateY(100vh) rotate(360deg); /* Falls below viewport, rotates */
+          opacity: 0; /* Becomes invisible */
         }
       }
 
+      /* Styling for product cards */
       .product-card {
-        background: linear-gradient(145deg, #ffffff, #f3f4f6);
-        border: 1px solid rgba(255, 255, 255, 0.8);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
+        background: linear-gradient(
+          145deg,
+          #ffffff,
+          #f3f4f6
+        ); /* Subtle gradient background */
+        border: 1px solid rgba(255, 255, 255, 0.8); /* Light border */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
       }
 
+      /* Hover effect for product cards */
       .product-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        transform: translateY(-10px); /* Moves up slightly on hover */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
       }
 
+      /* Styling for navigation links */
       .nav-link {
         position: relative;
         overflow: hidden;
       }
 
+      /* Underline animation for navigation links */
       .nav-link::after {
         content: "";
         position: absolute;
@@ -173,121 +217,294 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: linear-gradient(90deg, #5d48d6, #10b981);
-        transition: width 0.3s ease;
+        background: linear-gradient(
+          90deg,
+          #5d48d6,
+          #10b981
+        ); /* Gradient underline */
+        transition: width 0.3s ease; /* Smooth width transition */
       }
 
+      /* Expands underline on hover */
       .nav-link:hover::after {
         width: 100%;
       }
 
+      /* Styling for category filter buttons */
       .category-filter {
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.3s ease; /* Smooth transition for active state */
       }
 
+      /* Active state for category filter buttons */
       .category-filter.active {
-        background: linear-gradient(135deg, #d227db, #10b981);
-        color: white;
+        background: linear-gradient(
+          135deg,
+          #d227db,
+          #10b981
+        ); /* Gradient background for active button */
+        color: white; /* White text for active button */
       }
 
+      /* Styling for testimonial cards */
       .testimonial-card {
-        background: linear-gradient(145deg, #ffffff, #f8fafc);
-        border: 1px solid rgba(255, 255, 255, 0.8);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        background: linear-gradient(
+          145deg,
+          #ffffff,
+          #f8fafc
+        ); /* Subtle gradient background */
+        border: 1px solid rgba(255, 255, 255, 0.8); /* Light border */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Soft shadow */
       }
 
+      /* Styling for process steps */
       .process-step {
-        background: linear-gradient(145deg, #ffffff, #f8fafc);
-        border: 2px solid transparent;
-        background-clip: padding-box;
+        background: linear-gradient(
+          145deg,
+          #ffffff,
+          #f8fafc
+        ); /* Subtle gradient background */
+        border: 2px solid transparent; /* Transparent border for gradient border effect */
+        background-clip: padding-box; /* Clips background to padding box */
         position: relative;
       }
 
+      /* Gradient border effect for process steps */
       .process-step::before {
         content: "";
         position: absolute;
         inset: 0;
         padding: 2px;
-        background: linear-gradient(135deg, #db2777, #10b981);
-        border-radius: inherit;
-        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        mask-composite: exclude;
+        background: linear-gradient(
+          135deg,
+          #db2777,
+          #10b981
+        ); /* Gradient background for the pseudo-element */
+        border-radius: inherit; /* Inherits border-radius from parent */
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); /* Masks to create the border effect */
+        mask-composite: exclude; /* Excludes the inner mask from the outer */
       }
 
+      /* Mobile menu sliding animation */
       .mobile-menu {
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
+        transform: translateX(-100%); /* Starts off-screen to the left */
+        transition: transform 0.3s ease; /* Smooth transition for sliding */
       }
 
+      /* Active state for mobile menu */
       .mobile-menu.active {
-        transform: translateX(0);
+        transform: translateX(0); /* Slides into view */
       }
 
+      /* Styling for search overlay */
       .search-overlay {
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+        backdrop-filter: blur(10px); /* Blurs content behind */
       }
 
+      /* Styling for search input box */
       .search-box {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
+        background: rgba(
+          255,
+          255,
+          255,
+          0.95
+        ); /* Semi-transparent white background */
+        backdrop-filter: blur(20px); /* Blurs content behind */
       }
 
+      /* Styling for price badge */
       .price-badge {
-        background: linear-gradient(135deg, #fbbf24, #f59e0b);
+        background: linear-gradient(
+          135deg,
+          #fbbf24,
+          #f59e0b
+        ); /* Yellow to orange gradient */
         color: white;
         font-weight: 600;
       }
 
+      /* Styling for rating stars */
       .rating-stars {
-        color: #fbbf24;
+        color: #fbbf24; /* Yellow color for stars */
       }
 
+      /* Styling for seasonal badge */
       .seasonal-badge {
-        background: linear-gradient(135deg, #10b981, #059669);
+        background: linear-gradient(
+          135deg,
+          #10b981,
+          #059669
+        ); /* Green gradient */
         color: white;
         font-size: 0.75rem;
         padding: 2px 8px;
         border-radius: 12px;
       }
 
+      /* Styling for subscription card */
       .subscription-card {
-        background: linear-gradient(145deg, #fef3c7, #fde68a);
-        border: 2px solid #f59e0b;
+        background: linear-gradient(
+          145deg,
+          #fef3c7,
+          #fde68a
+        ); /* Light yellow gradient */
+        border: 2px solid #f59e0b; /* Orange border */
       }
 
+      /* Styling for blog cards */
       .blog-card {
-        background: linear-gradient(145deg, #ffffff, #f8fafc);
-        border: 1px solid rgba(255, 255, 255, 0.8);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        background: linear-gradient(
+          145deg,
+          #ffffff,
+          #f8fafc
+        ); /* Subtle gradient background */
+        border: 1px solid rgba(255, 255, 255, 0.8); /* Light border */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Soft shadow */
         overflow: hidden;
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
       }
 
+      /* Hover effect for blog cards */
       .blog-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        transform: translateY(-5px); /* Moves up slightly on hover */
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); /* Larger shadow on hover */
       }
 
+      /* Styling for delivery badge */
       .delivery-badge {
-        background: linear-gradient(135deg, #10b981, #059669);
+        background: linear-gradient(
+          135deg,
+          #10b981,
+          #059669
+        ); /* Green gradient */
         color: white;
         font-size: 0.75rem;
         padding: 4px 8px;
         border-radius: 16px;
       }
 
+      /* Styling for corporate section */
       .corporate-section {
-        background: linear-gradient(135deg, #f3e8ff, #e0e7ff);
+        background: linear-gradient(
+          135deg,
+          #f3e8ff,
+          #e0e7ff
+        ); /* Purple to blue gradient */
       }
 
+      /* Styling for workshop cards */
       .workshop-card {
-        background: linear-gradient(145deg, #fef3c7, #fde68a);
-        border: 2px solid #f59e0b;
+        background: linear-gradient(
+          145deg,
+          #fef3c7,
+          #fde68a
+        ); /* Light yellow gradient */
+        border: 2px solid #f59e0b; /* Orange border */
+      }
+
+      /* Custom modal for messages */
+      .custom-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .custom-modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .custom-modal-content {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        max-width: 90%;
+        width: 400px;
+        text-align: center;
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .custom-modal-overlay.active .custom-modal-content {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      /* New CSS for Add to Cart button animation */
+      .add-to-cart-success {
+        animation: add-to-cart-pop 1.5s ease-out forwards; /* 1.5s duration */
+        background: #4caf50 !important; /* Force green background */
+        color: white !important; /* Force white text */
+        font-weight: 600; /* Ensure text is bold */
+      }
+
+      @keyframes add-to-cart-pop {
+        0% {
+          transform: scale(1);
+          background: linear-gradient(
+            to right,
+            #db2777,
+            #10b981
+          ); /* Initial gradient */
+          content: "Add to Cart";
+        }
+        20% {
+          transform: scale(1.05); /* Slightly larger */
+          background: #4caf50; /* Green at peak */
+          content: "Added!";
+        }
+        80% {
+          transform: scale(1); /* Return to normal size */
+          background: #4caf50; /* Still green */
+          content: "Added!";
+        }
+        100% {
+          transform: scale(1);
+          background: linear-gradient(
+            to right,
+            #db2777,
+            #10b981
+          ); /* Revert to original gradient */
+          content: "Add to Cart";
+        }
+      }
+
+      /* Ensures the text changes during the animation */
+      .add-to-cart-success::before {
+        content: "Added!";
+      }
+
+      /* Animation for See More button */
+      .see-more-button-animation {
+        animation: see-more-bounce 0.5s ease-in-out;
+      }
+
+      @keyframes see-more-bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px); /* Small bounce up */
+        }
       }
     </style>
   </head>
   <body class="bg-gradient-to-br from-pink-50 via-white to-emerald-50">
+    <!-- Floating flower particles for visual effect -->
     <div class="flower-particle" style="left: 5%; animation-delay: 0s"></div>
     <div class="flower-particle" style="left: 15%; animation-delay: 1.5s"></div>
     <div class="flower-particle" style="left: 25%; animation-delay: 3s"></div>
@@ -305,16 +522,19 @@
       style="left: 95%; animation-delay: 13.5s"
     ></div>
 
+    <!-- Navigation Bar -->
     <nav
       class="nav-blur fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       id="navbar"
     >
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
           <div class="flex items-center space-x-2">
             <span class="text-3xl font-bold gradient-text">Pollen</span>
           </div>
 
+          <!-- Desktop Navigation Links -->
           <div class="hidden md:flex items-center space-x-8">
             <a
               href="#home"
@@ -353,6 +573,7 @@
             >
           </div>
 
+          <!-- Desktop Icons (Search, Cart) and Order Button -->
           <div class="hidden md:flex items-center space-x-4">
             <button
               onclick="toggleSearch()"
@@ -373,33 +594,38 @@
               </svg>
             </button>
             <button
+              onclick="toggleCartView()"
               class="p-2 rounded-full hover:bg-gray-100 transition-colors relative"
             >
+              <!-- Updated Cart Icon SVG -->
               <svg
-                class="w-5 h-5 text-gray-600"
+                class="w-6 h-6 text-gray-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v5a2 2 0 01-2 2H9a2 2 0 01-2-2v-5m6-5V6a2 2 0 00-2-2H9a2 2 0 00-2 2v2"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                 ></path>
               </svg>
               <span
+                id="cart-count"
                 class="absolute -top-1 -right-1 bg-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
-                >3</span
+                >0</span
               >
             </button>
             <a
-              href="#order"
+              href="#products"
               class="bg-gradient-to-r from-pink-500 to-emerald-500 text-white px-6 py-2 rounded-full font-medium hover:scale-105 transition-transform"
               >Order Now</a
             >
           </div>
 
+          <!-- Mobile Menu Toggle Button -->
           <button class="md:hidden" onclick="toggleMobileMenu()">
             <svg
               class="w-6 h-6 text-gray-600"
@@ -419,6 +645,7 @@
       </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
     <div
       class="mobile-menu fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 md:hidden"
       id="mobileMenu"
@@ -482,6 +709,7 @@
       </div>
     </div>
 
+    <!-- Search Overlay -->
     <div class="search-overlay fixed inset-0 z-40 hidden" id="searchOverlay">
       <div class="flex items-center justify-center min-h-screen p-4">
         <div class="search-box w-full max-w-2xl rounded-2xl p-8">
@@ -533,6 +761,98 @@
       </div>
     </div>
 
+    <!-- Cart Overlay (New Feature) -->
+    <div class="custom-modal-overlay hidden" id="cartOverlay">
+      <div
+        class="custom-modal-content w-full max-w-lg p-8 bg-white rounded-2xl shadow-xl relative"
+      >
+        <button
+          onclick="toggleCartView()"
+          class="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full"
+        >
+          <svg
+            class="w-6 h-6 text-gray-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+        <h3 class="text-3xl font-bold gradient-text mb-6">Your Cart</h3>
+        <div
+          id="cart-items-container"
+          class="space-y-4 max-h-96 overflow-y-auto pr-2"
+        >
+          <!-- Cart items will be rendered here by JavaScript -->
+          <p class="text-gray-500 text-center" id="empty-cart-message">
+            Your cart is empty.
+          </p>
+        </div>
+        <div
+          class="flex justify-between items-center border-t border-gray-200 pt-6 mt-6"
+        >
+          <span class="text-xl font-semibold text-gray-800">Total:</span>
+          <span class="text-2xl font-bold gradient-text" id="cart-total"
+            >₹0</span
+          >
+        </div>
+        <button
+          onclick="showComingSoonMessage()"
+          id="proceed-to-checkout-btn"
+          class="w-full mt-8 bg-gradient-to-r from-pink-500 to-emerald-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform"
+        >
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+
+    <!-- Coming Soon Message Modal (New Feature) -->
+    <div class="custom-modal-overlay hidden" id="comingSoonModal">
+      <div
+        class="custom-modal-content p-8 bg-white rounded-2xl shadow-xl relative"
+      >
+        <button
+          onclick="hideComingSoonMessage()"
+          class="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full"
+        >
+          <svg
+            class="w-6 h-6 text-gray-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+        <h3 class="text-3xl font-bold gradient-text mb-4">Coming Soon!</h3>
+        <p class="text-gray-700 text-lg mb-6">
+          Our e-commerce delivery feature is currently under development.
+        </p>
+        <p class="text-gray-700 text-lg font-semibold mb-8">
+          For home delivery, please contact us at:
+          <br /><span class="text-emerald-600">+91 98765 43210</span>
+        </p>
+        <button
+          onclick="hideComingSoonMessage()"
+          class="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-transform"
+        >
+          Got It!
+        </button>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
     <section
       id="home"
       class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
@@ -588,6 +908,7 @@
       </div>
     </section>
 
+    <!-- Stats Section -->
     <section class="py-16 bg-white/80 backdrop-blur-sm">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -611,6 +932,7 @@
       </div>
     </section>
 
+    <!-- Products Section -->
     <section
       id="products"
       class="py-20 bg-gradient-to-br from-pink-50 to-purple-50"
@@ -657,12 +979,53 @@
           >
             Gift Sets
           </button>
+          <button
+            class="category-filter px-6 py-3 rounded-full border-2 border-pink-200 text-pink-600 font-medium"
+            onclick="filterProducts('birthday')"
+          >
+            Birthday
+          </button>
+          <button
+            class="category-filter px-6 py-3 rounded-full border-2 border-pink-200 text-pink-600 font-medium"
+            onclick="filterProducts('anniversary')"
+          >
+            Anniversary
+          </button>
+          <button
+            class="category-filter px-6 py-3 rounded-full border-2 border-pink-200 text-pink-600 font-medium"
+            onclick="filterProducts('sympathy')"
+          >
+            Sympathy
+          </button>
+          <button
+            class="category-filter px-6 py-3 rounded-full border-2 border-pink-200 text-pink-600 font-medium"
+            onclick="filterProducts('orchids')"
+          >
+            Orchids
+          </button>
+          <button
+            class="category-filter px-6 py-3 rounded-full border-2 border-pink-200 text-pink-600 font-medium"
+            onclick="filterProducts('vases')"
+          >
+            Vases
+          </button>
+          <button
+            class="category-filter px-6 py-3 rounded-full border-2 border-pink-200 text-pink-600 font-medium"
+            onclick="filterProducts('planters')"
+          >
+            Planters
+          </button>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Product Card 1 (Bouquets) -->
           <div
             class="product-card rounded-3xl overflow-hidden fade-in-up"
             data-category="bouquets"
+            data-id="product-1"
+            data-name="Premium Red Rose Bouquet"
+            data-price="1200"
+            data-image="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
           >
             <div class="relative">
               <img
@@ -690,6 +1053,7 @@
                 </div>
               </div>
               <button
+                onclick="addToCart(this, 'product-1', 'Premium Red Rose Bouquet', 1200, 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"
                 class="w-full mt-4 bg-gradient-to-r from-pink-500 to-emerald-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
               >
                 Add to Cart
@@ -697,9 +1061,14 @@
             </div>
           </div>
 
+          <!-- Product Card 2 (Arrangements) -->
           <div
             class="product-card rounded-3xl overflow-hidden fade-in-up"
             data-category="arrangements"
+            data-id="product-2"
+            data-name="Spring Garden Arrangement"
+            data-price="2500"
+            data-image="spring.jpeg"
             style="animation-delay: 0.1s"
           >
             <div class="relative">
@@ -728,6 +1097,7 @@
                 </div>
               </div>
               <button
+                onclick="addToCart(this, 'product-2', 'Spring Garden Arrangement', 2500, 'spring.jpeg')"
                 class="w-full mt-4 bg-gradient-to-r from-pink-500 to-emerald-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
               >
                 Add to Cart
@@ -735,9 +1105,14 @@
             </div>
           </div>
 
+          <!-- Product Card 3 (Plants) -->
           <div
             class="product-card rounded-3xl overflow-hidden fade-in-up"
             data-category="plants"
+            data-id="product-3"
+            data-name="Monstera Deliciosa"
+            data-price="800"
+            data-image="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
             style="animation-delay: 0.2s"
           >
             <div class="relative">
@@ -768,6 +1143,7 @@
                 </div>
               </div>
               <button
+                onclick="addToCart(this, 'product-3', 'Monstera Deliciosa', 800, 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"
                 class="w-full mt-4 bg-gradient-to-r from-pink-500 to-emerald-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
               >
                 Add to Cart
@@ -775,9 +1151,14 @@
             </div>
           </div>
 
+          <!-- Product Card 4 (Gift Sets) -->
           <div
             class="product-card rounded-3xl overflow-hidden fade-in-up"
             data-category="gifts"
+            data-id="product-4"
+            data-name="Luxury Gift Set"
+            data-price="3200"
+            data-image="https://dispozable.in/cdn/shop/files/1_0b2d1c54-76e8-4cc5-8459-6b441b811bf0.webp?v=1749714925"
             style="animation-delay: 0.3s"
           >
             <div class="relative">
@@ -806,6 +1187,7 @@
                 </div>
               </div>
               <button
+                onclick="addToCart(this, 'product-4', 'Luxury Gift Set', 3200, 'https://dispozable.in/cdn/shop/files/1_0b2d1c54-76e8-4cc5-8459-6b441b811bf0.webp?v=1749714925')"
                 class="w-full mt-4 bg-gradient-to-r from-pink-500 to-emerald-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
               >
                 Add to Cart
@@ -813,9 +1195,14 @@
             </div>
           </div>
 
+          <!-- Product Card 5 (Bouquets) -->
           <div
             class="product-card rounded-3xl overflow-hidden fade-in-up"
             data-category="bouquets"
+            data-id="product-5"
+            data-name="White Lily Elegance"
+            data-price="1800"
+            data-image="https://understandingitaly.b-cdn.net/images/content/white-lily.jpg"
             style="animation-delay: 0.4s"
           >
             <div class="relative">
@@ -842,6 +1229,7 @@
                 </div>
               </div>
               <button
+                onclick="addToCart(this, 'product-5', 'White Lily Elegance', 1800, 'https://understandingitaly.b-cdn.net/images/content/white-lily.jpg')"
                 class="w-full mt-4 bg-gradient-to-r from-pink-500 to-emerald-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
               >
                 Add to Cart
@@ -849,9 +1237,14 @@
             </div>
           </div>
 
+          <!-- Product Card 6 (Arrangements) -->
           <div
             class="product-card rounded-3xl overflow-hidden fade-in-up"
             data-category="arrangements"
+            data-id="product-6"
+            data-name="Sunshine Arrangement"
+            data-price="2200"
+            data-image="https://shadesofspring.in/cdn/shop/products/image_5ee071e5-e0f1-4597-ad32-21f06d3209b9_1800x1800.jpg?v=1609182984"
             style="animation-delay: 0.5s"
           >
             <div class="relative">
@@ -878,16 +1271,307 @@
                 </div>
               </div>
               <button
+                onclick="addToCart(this, 'product-6', 'Sunshine Arrangement', 2200, 'https://shadesofspring.in/cdn/shop/products/image_5ee071e5-e0f1-4597-ad32-21f06d3209b9_1800x1800.jpg?v=1609182984')"
                 class="w-full mt-4 bg-gradient-to-r from-pink-500 to-emerald-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
               >
                 Add to Cart
               </button>
             </div>
           </div>
+
+          <!-- Hidden Products Start Here -->
+          <div id="hidden-products" class="contents">
+            <!-- Product Card 7 (Birthday) -->
+            <div
+              class="product-card rounded-3xl overflow-hidden fade-in-up"
+              data-category="bouquets birthday"
+              data-id="product-7"
+              data-name="Joyful Birthday Bouquet"
+              data-price="1500"
+              data-image="https://images.unsplash.com/photo-1594738596000-dc21124231b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              style="animation-delay: 0.6s"
+            >
+              <div class="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1594738596000-dc21124231b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                  alt="Joyful Birthday Bouquet"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="absolute top-4 left-4 seasonal-badge">
+                  Celebrate
+                </div>
+                <div class="absolute top-4 right-4 delivery-badge">
+                  Gift Tag
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  Joyful Birthday Bouquet
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Vibrant mixed flowers for a cheerful celebration
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="price-badge px-3 py-1 rounded-full text-sm">
+                    ₹1,500
+                  </div>
+                  <div class="flex items-center space-x-1">
+                    <div class="rating-stars">★★★★★</div>
+                    <span class="text-sm text-gray-600">(4.9)</span>
+                  </div>
+                </div>
+                <button
+                  onclick="addToCart(this, 'product-7', 'Joyful Birthday Bouquet', 1500, 'https://images.unsplash.com/photo-1594738596000-dc21124231b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"
+                  class="w-full mt-4 bg-gradient-to-r from-pink-500 to-emerald-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product Card 8 (Anniversary) -->
+            <div
+              class="product-card rounded-3xl overflow-hidden fade-in-up"
+              data-category="arrangements anniversary"
+              data-id="product-8"
+              data-name="Romantic Anniversary Roses"
+              data-price="2800"
+              data-image="https://images.unsplash.com/photo-1550005864-4e1a0b3e1b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              style="animation-delay: 0.7s"
+            >
+              <div class="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1550005864-4e1a0b3e1b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                  alt="Romantic Anniversary Roses"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="absolute top-4 left-4 seasonal-badge">Love</div>
+                <div class="absolute top-4 right-4 delivery-badge">Premium</div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  Romantic Anniversary Roses
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Deep red roses in a classic, elegant arrangement
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="price-badge px-3 py-1 rounded-full text-sm">
+                    ₹2,800
+                  </div>
+                  <div class="flex items-center space-x-1">
+                    <div class="rating-stars">★★★★★</div>
+                    <span class="text-sm text-gray-600">(5.0)</span>
+                  </div>
+                </div>
+                <button
+                  onclick="addToCart(this, 'product-8', 'Romantic Anniversary Roses', 2800, 'https://images.unsplash.com/photo-1550005864-4e1a0b3e1b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"
+                  class="w-full mt-4 bg-gradient-to-r from-pink-500 to-emerald-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product Card 9 (Sympathy) -->
+            <div
+              class="product-card rounded-3xl overflow-hidden fade-in-up"
+              data-category="arrangements sympathy"
+              data-id="product-9"
+              data-name="Serene White Lily Arrangement"
+              data-price="2000"
+              data-image="https://images.unsplash.com/photo-1563722080517-38031d7e2e8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              style="animation-delay: 0.8s"
+            >
+              <div class="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1563722080517-38031d7e2e8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                  alt="Serene White Lily Arrangement"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="absolute top-4 left-4 seasonal-badge">Comfort</div>
+                <div class="absolute top-4 right-4 delivery-badge">Subtle</div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  Serene White Lily Arrangement
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Elegant white lilies and greens for heartfelt condolences
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="price-badge px-3 py-1 rounded-full text-sm">
+                    ₹2,000
+                  </div>
+                  <div class="flex items-center space-x-1">
+                    <div class="rating-stars">★★★★★</div>
+                    <span class="text-sm text-gray-600">(4.8)</span>
+                  </div>
+                </div>
+                <button
+                  onclick="addToCart(this, 'product-9', 'Serene White Lily Arrangement', 2000, 'https://images.unsplash.com/photo-1563722080517-38031d7e2e8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"
+                  class="w-full mt-4 bg-gradient-to-r from-pink-500 to-emerald-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product Card 10 (Orchids) -->
+            <div
+              class="product-card rounded-3xl overflow-hidden fade-in-up"
+              data-category="plants orchids"
+              data-id="product-10"
+              data-name="Exotic Phalaenopsis Orchid"
+              data-price="3500"
+              data-image="https://images.unsplash.com/photo-1596767570499-13e61c3b12f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              style="animation-delay: 0.9s"
+            >
+              <div class="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1596767570499-13e61c3b12f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                  alt="Exotic Phalaenopsis Orchid"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="absolute top-4 left-4 seasonal-badge">Luxury</div>
+                <div class="absolute top-4 right-4 delivery-badge">
+                  Long-lasting
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  Exotic Phalaenopsis Orchid
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Stunning potted orchid, perfect for elegant spaces
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="price-badge px-3 py-1 rounded-full text-sm">
+                    ₹3,500
+                  </div>
+                  <div class="flex items-center space-x-1">
+                    <div class="rating-stars">★★★★★</div>
+                    <span class="text-sm text-gray-600">(4.9)</span>
+                  </div>
+                </div>
+                <button
+                  onclick="addToCart(this, 'product-10', 'Exotic Phalaenopsis Orchid', 3500, 'https://images.unsplash.com/photo-1596767570499-13e61c3b12f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"
+                  class="w-full mt-4 bg-gradient-to-r from-pink-500 to-emerald-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product Card 11 (Vases) -->
+            <div
+              class="product-card rounded-3xl overflow-hidden fade-in-up"
+              data-category="decor vases"
+              data-id="product-11"
+              data-name="Modern Ceramic Vase"
+              data-price="950"
+              data-image="https://images.unsplash.com/photo-1596767570499-13e61c3b12f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              style="animation-delay: 1s"
+            >
+              <div class="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1596767570499-13e61c3b12f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                  alt="Modern Ceramic Vase"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="absolute top-4 left-4 seasonal-badge">
+                  New Arrival
+                </div>
+                <div class="absolute top-4 right-4 delivery-badge">
+                  Home Decor
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Modern Ceramic Vase</h3>
+                <p class="text-gray-600 mb-4">
+                  Sleek design, perfect for any floral arrangement
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="price-badge px-3 py-1 rounded-full text-sm">
+                    ₹950
+                  </div>
+                  <div class="flex items-center space-x-1">
+                    <div class="rating-stars">★★★★★</div>
+                    <span class="text-sm text-gray-600">(4.7)</span>
+                  </div>
+                </div>
+                <button
+                  onclick="addToCart(this, 'product-11', 'Modern Ceramic Vase', 950, 'https://images.unsplash.com/photo-1596767570499-13e61c3b12f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"
+                  class="w-full mt-4 bg-gradient-to-r from-pink-500 to-emerald-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product Card 12 (Planters) -->
+            <div
+              class="product-card rounded-3xl overflow-hidden fade-in-up"
+              data-category="decor planters"
+              data-id="product-12"
+              data-name="Minimalist Concrete Planter"
+              data-price="700"
+              data-image="https://images.unsplash.com/photo-1589998059171-85e8a7e0f2f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              style="animation-delay: 1.1s"
+            >
+              <div class="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1589998059171-85e8a7e0f2f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                  alt="Minimalist Concrete Planter"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="absolute top-4 left-4 seasonal-badge">Durable</div>
+                <div class="absolute top-4 right-4 delivery-badge">
+                  Indoor/Outdoor
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  Minimalist Concrete Planter
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Stylish and sturdy planter for your favorite greens
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="price-badge px-3 py-1 rounded-full text-sm">
+                    ₹700
+                  </div>
+                  <div class="flex items-center space-x-1">
+                    <div class="rating-stars">★★★★★</div>
+                    <span class="text-sm text-gray-600">(4.6)</span>
+                  </div>
+                </div>
+                <button
+                  onclick="addToCart(this, 'product-12', 'Minimalist Concrete Planter', 700, 'https://images.unsplash.com/photo-1589998059171-85e8a7e0f2f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"
+                  class="w-full mt-4 bg-gradient-to-r from-pink-500 to-emerald-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Hidden Products End Here -->
+        </div>
+
+        <!-- See More Button -->
+        <div class="text-center mt-12 fade-in-up">
+          <button
+            id="see-more-btn"
+            onclick="toggleSeeMoreProducts()"
+            class="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-8 py-4 rounded-full font-semibold text-lg transform hover:scale-105 transition-all duration-300 shadow-xl"
+          >
+            See More Products
+          </button>
         </div>
       </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="py-20 bg-white">
       <div class="container mx-auto px-4">
         <h2
@@ -1087,6 +1771,7 @@
       </div>
     </section>
 
+    <!-- About Section -->
     <section
       id="about"
       class="py-20 bg-gradient-to-br from-purple-50 to-pink-50"
@@ -1188,6 +1873,7 @@
       </div>
     </section>
 
+    <!-- Process Section -->
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
         <h2
@@ -1261,6 +1947,7 @@
       </div>
     </section>
 
+    <!-- Testimonials Section -->
     <section class="py-20 bg-gradient-to-br from-pink-50 to-purple-50">
       <div class="container mx-auto px-4">
         <h2
@@ -1341,6 +2028,7 @@
       </div>
     </section>
 
+    <!-- Workshops Section -->
     <section id="workshops" class="py-20 bg-white">
       <div class="container mx-auto px-4">
         <h2
@@ -1365,10 +2053,7 @@
             <p class="text-gray-600 mb-4">
               Learn the fundamentals of creating beautiful hand-tied bouquets
             </p>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-2xl font-bold text-yellow-600">₹1,500</span>
-              <span class="text-sm text-gray-500">2 hours</span>
-            </div>
+            <br />
             <button
               class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
             >
@@ -1391,10 +2076,7 @@
             <p class="text-gray-600 mb-4">
               Create stunning table centerpieces for special occasions
             </p>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-2xl font-bold text-yellow-600">₹2,000</span>
-              <span class="text-sm text-gray-500">3 hours</span>
-            </div>
+            <br />
             <button
               class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
             >
@@ -1417,10 +2099,7 @@
             <p class="text-gray-600 mb-4">
               Master the art of wedding bouquets and bridal arrangements
             </p>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-2xl font-bold text-yellow-600">₹3,500</span>
-              <span class="text-sm text-gray-500">4 hours</span>
-            </div>
+            <br />
             <button
               class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 rounded-full font-medium hover:scale-105 transition-transform"
             >
@@ -1431,6 +2110,7 @@
       </div>
     </section>
 
+    <!-- Blog Section -->
     <section
       id="blog"
       class="py-20 bg-gradient-to-br from-purple-50 to-pink-50"
@@ -1533,6 +2213,7 @@
       </div>
     </section>
 
+    <!-- Subscription Section -->
     <section class="py-20 bg-emerald-500/10">
       <div class="container mx-auto px-4">
         <div
@@ -1563,6 +2244,7 @@
       </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
       <div class="container mx-auto px-4">
         <h2
@@ -1701,6 +2383,7 @@
       </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-4 gap-8">
@@ -1727,14 +2410,7 @@
               <a href="#" class="text-gray-400 hover:text-pink-500">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path
-                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.945.295 4.29.584.86.325.26 1.765.005 3.155c-.29.65-.453 1.48-.513 2.758C.015 8.333 0 8.74 0 12c0 3.26.015 3.667.072 4.947.06 1.277.223 2.107.513 2.758.325.86.765 1.45 1.555 1.798.65.29 1.48.453 2.758.513 1.28.058 1.687.072 4.947.072 3.26 0 3.667-.015 4.947-.072 1.277-.06 2.107-.223 2.758-.513.86-.325 1.45-.765 1.798-1.555.29-.65.453-1.48.513-2.758.058-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.223-2.107-.513-2.758-.325-.86-.765-1.45-1.555-1.798-.65-.29-1.48-.453-2.758-.513C15.667.015 15.26 0 12 0zm0 2.16c3.22 0 3.58.012 4.85.068 1.15.05 1.76.22 2.22.427.5.22.845.54 1.145.835.29.29.61.645.835 1.145.207.46.377 1.07.427 2.22.056 1.27.068 1.63.068 4.85s-.012 3.58-.068 4.85c-.05 1.15-.22 1.76-.427 2.22-.22.5-.54.845-.835 1.145-.29.29-.645.61-1.145.835-.46.207-1.07.377-2.22.427-1.27.056-1.63.068-4.85.068s-3.58-.012-4.85-.068c-1.15-.05-1.76-.22-2.22-.427-.5-.22-.845-.54-1.145-.835-.29-.29-.61-.645-.835-1.145-.207-.46-.377-1.07-.427-2.22-.056-1.27-.068-1.63-.068-4.85s.012-3.58.068-4.85c.05-1.15.22-1.76.427-2.22.22-.5.54-.845.835-1.145.29-.29.645-.61 1.145-.835.46-.207 1.07-.377 2.22-.427C8.42 2.172 8.78 2.16 12 2.16zm0 3.635A6.205 6.205 0 005.815 12a6.205 6.205 0 1012.37 0 6.205 6.205 0 00-6.185-6.205zM12 16a4 4 0 110-8 4 4 0 010 8z"
-                  ></path>
-                </svg>
-              </a>
-              <a href="#" class="text-gray-400 hover:text-pink-500">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M2.002 9.096h-.001V20H5.97V9.096H2.002zM4.002 3.999A2 2 0 104 8a2 2 0 000-4zm18.005 5.097c0-2.481-1.285-3.415-3.003-3.415-1.492 0-2.457.906-2.884 1.767V5.999h-3.96v14.001h3.96v-7.391c0-.401.008-.801.03-.801.023-.001.045-.001.068-.001 1.492 0 2.825 1.83 2.825 4.567V20h3.96V9.096z"
+                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.945.295 4.29.584.86.325.26 1.765.005 3.155c-.29.65-.453 1.48-.513 2.758C.015 8.333 0 8.74 0 12c0 3.26.015 3.667.072 4.947.06 1.277.223 2.107.513 2.758.325.86.765 1.45 1.555 1.798.65.29 1.48.453 2.758.513 1.28.058 1.687.072 4.947.072 3.26 0 3.667-.015 4.947-.072 1.277-.06 2.107-.223 2.758-.513.86-.325 1.45-.765 1.798-1.555.29-.65.453-1.48.513-2.758.058-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.223-2.107-.513-2.758-.325-.86-.765-1.45-1.798-.513C15.667.015 15.26 0 12 0zm0 2.16c3.22 0 3.58.012 4.85.068 1.15.05 1.76.22 2.22.427.5.22.845.54 1.145.835.29.29.61.645.835 1.145.207.46.377 1.07.427 2.22.056 1.27.068 1.63.068 4.85s-.012 3.58-.068 4.85c-.05 1.15-.22 1.76-.427 2.22-.22.5-.54.845-.835 1.145-.29.29-.645.61-1.145.835-.46.207-1.07.377-2.22.427-1.27.056-1.63.068-4.85.068s-3.58-.012-4.85-.068c-1.15-.05-1.76-.22-2.22-.427-.5-.22-.845-.54-1.145-.835-.29-.29-.61-.645-.835-1.145-.207-.46-.377-1.07-.427-2.22-.056-1.27-.068-1.63-.068-4.85s.012-3.58.068-4.85c.05-1.15.22-1.76.427-2.22.22-.5.54-.845.835-1.145.29-.29.645-.61 1.145-.835.46-.207 1.07-.377 2.22-.427C8.42 2.172 8.78 2.16 12 2.16zm0 3.635A6.205 6.205 0 005.815 12a6.205 6.205 0 1012.37 0 6.205 6.205 0 00-6.185-6.205zM12 16a4 4 0 110-8 4 4 0 010 8z"
                   ></path>
                 </svg>
               </a>
@@ -1818,73 +2494,12 @@
         </div>
         <hr class="border-gray-700 my-8" />
         <div class="text-center text-gray-400 text-sm">
-          &copy; 2025 Pollen. All rights reserved.
+          &copy; 2024 Pollen. All rights reserved.
         </div>
       </div>
     </footer>
 
-    <script>
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-          // Close mobile menu if open
-          const mobileMenu = document.getElementById("mobileMenu");
-          if (mobileMenu.classList.contains("active")) {
-            mobileMenu.classList.remove("active");
-          }
-        });
-      });
-
-      // Sticky navigation bar on scroll
-      window.addEventListener("scroll", function () {
-        const navbar = document.getElementById("navbar");
-        if (window.scrollY > 50) {
-          navbar.classList.add("shadow-lg");
-        } else {
-          navbar.classList.remove("shadow-lg");
-        }
-      });
-
-      // Toggle mobile menu
-      function toggleMobileMenu() {
-        const mobileMenu = document.getElementById("mobileMenu");
-        mobileMenu.classList.toggle("active");
-      }
-
-      // Toggle search overlay
-      function toggleSearch() {
-        const searchOverlay = document.getElementById("searchOverlay");
-        searchOverlay.classList.toggle("hidden");
-      }
-
-      // Product filtering
-      function filterProducts(category) {
-        const products = document.querySelectorAll(".product-card");
-        products.forEach((product) => {
-          if (category === "all" || product.dataset.category === category) {
-            product.style.display = "block";
-          } else {
-            product.style.display = "none";
-          }
-        });
-
-        const filterButtons = document.querySelectorAll(".category-filter");
-        filterButtons.forEach((button) => {
-          button.classList.remove("active");
-          if (button.textContent.toLowerCase().includes(category)) {
-            button.classList.add("active");
-          }
-        });
-      }
-
-      // Initial filter on page load
-      document.addEventListener("DOMContentLoaded", () => {
-        filterProducts("all");
-      });
-    </script>
+    <!-- Link to your external JavaScript file -->
+    <script src="script.js"></script>
   </body>
 </html>
